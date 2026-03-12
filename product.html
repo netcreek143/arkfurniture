@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ark Furniture | Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP INFO BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>Designed for Comfort</span>
+            <span class="separator">|</span>
+            <span>Delivered Across India</span>
+        </div>
+        <div class="top-bar-right">
+            <span>+91 99621 00903</span>
+            <span class="separator">|</span>
+            <span>info@arkfurniture.in</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Ark Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-center">
+            <a href="category.html?type=foyer">Foyer</a>
+            <a href="category.html?type=living">Living</a>
+            <a href="category.html?type=dining">Dining</a>
+            <a href="category.html?type=bedroom">Bedroom</a>
+            <a href="category.html?type=modular">Modular</a>
+            <a href="category.html?type=outdoor">Outdoor</a>
+            <a href="category.html?type=decor">Decor</a>
+            <a href="category.html?type=lightings">Lightings</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="nav-icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Login</span>
+            </a>
+            <a href="#" class="nav-icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </a>
+            <a href="#" class="nav-icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </a>
+            <a href="#" class="nav-icon-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMBS -->
+    <div class="pdp-breadcrumbs" id="pdpBreadcrumbs">
+        <!-- Dynamic Breadcrumbs -->
+    </div>
+
+    <!-- MAIN PRODUCT SECTION -->
+    <section class="product-detail-section">
+        <div class="pdp-container">
+            <!-- Left: Gallery -->
+            <div class="pdp-gallery">
+                <div class="main-image-container">
+                    <button class="gallery-nav prev" id="prevImg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <img id="mainProductImg" src="" alt="Product Main Image">
+                    <button class="gallery-nav next" id="nextImg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="thumbnails-row" id="thumbnailRow">
+                    <!-- Dynamic Thumbnails -->
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="product-info-panel">
+                <h1 id="productTitle" class="pdp-title">Product Name</h1>
+                
+                <div class="pdp-price-row">
+                    <span id="pdpNewPrice" class="pdp-price">₹ 0</span>
+                    <span id="pdpOldPrice" class="pdp-old-price">₹ 0</span>
+                    <span id="pdpDiscount" class="pdp-discount">0% OFF</span>
+                </div>
+
+                <div class="pdp-badge-row">
+                    <span class="warranty-badge">Know more about our warranty</span>
+                </div>
+
+                <div class="pdp-emi-row">
+                    EMI starts from <span id="pdpEmi">₹ 0</span> <a href="#" class="view-plans">View Plans</a>
+                </div>
+
+                <div id="stockStatus" class="stock-status">In Stock</div>
+
+                <!-- Customization Section -->
+                <div class="customise-section">
+                    <h3 class="customise-heading">Customise</h3>
+                    <p class="customise-note">Note: Additional charges are applicable for the following services and products</p>
+                    
+                    <div id="customizationGroup" class="custom-group">
+                        <!-- Dynamic Custom Options -->
+                    </div>
+
+                    <div class="dispatch-banner">
+                        Shop now and we’ll dispatch your order within 5 days
+                    </div>
+                </div>
+
+                <!-- Action Row -->
+                <div class="pdp-action-row">
+                    <div class="quantity-selector">
+                        <span>Quantity</span>
+                        <div class="stepper">
+                            <button id="qtyMinus">−</button>
+                            <input type="number" value="1" id="qtyInput">
+                            <button id="qtyPlus">+</button>
+                        </div>
+                    </div>
+                    <div class="price-btn">₹ <span id="btnPrice">0</span></div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <!-- Feature Lines -->
+                <div class="feature-lines" id="featureLines">
+                    <!-- Dynamic Features -->
+                </div>
+
+                <!-- Accordions -->
+                <div class="accordion-container" id="pdpAccordions">
+                    <!-- Dynamic Accordions -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMO BANNER (BEDS) -->
+    <section class="bedroom-promo">
+        <div class="bedroom-promo-container">
+            <div class="bedroom-bg-wrapper">
+                <img src="images/hero1.png" alt="Beds That Define Better Living" class="bedroom-promo-img">
+                <div class="bedroom-promo-overlay">
+                    <div class="play-btn-wrapper">
+                        <button class="play-btn" aria-label="Play Video">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="32" fill="#E67E22" />
+                                <path d="M42 32L27 40.6603V23.3397L42 32Z" fill="white" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bedroom-text-content">
+                        <h2 class="bedroom-heading">Beds That<br>Define Better Living</h2>
+                        <p class="bedroom-subheading">Play Video to Explore Finishes</p>
+                    </div>
+                    <div class="bedroom-side-text">
+                        Designed for deep rest, styled for modern homes.
+                    </div>
+                </div>
+            </div>
+            <!-- Arrows -->
+            <button class="banner-arrow prev" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="banner-arrow next" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- 8-FEATURE ICON GRID -->
+    <section class="quality-features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>10 Year Warranty</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>Direct Selling : Factory to Customer</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>66 Quality Checks</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>KD (Kiln Dried) and HT (Heat Treated)</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>Ergonomically Designed</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>Generations Long Durability</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>All India service Warranty</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
+                <p>Free of Child Labour</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMILAR PRODUCTS -->
+    <section class="similar-products-section">
+        <h2 class="section-title-serif">Similar Products</h2>
+        <div class="similar-grid-container">
+             <button class="nav-arrow prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+             </button>
+             <div class="product-grid" id="similarGrid">
+                <!-- Similar Products Injected -->
+             </div>
+             <button class="nav-arrow next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+             </button>
+        </div>
+    </section>
+
+    <!-- CONSULTATION FORM -->
+    <section class="lead-capture-section">
+        <div class="lead-capture-container">
+            <div class="lead-capture-header">
+                <h2 class="lead-heading">Find Furniture Made for You</h2>
+                <p class="lead-paragraph">Share your requirement with us and our furniture experts will help you find the right fit for your home collections.</p>
+            </div>
+
+            <form class="lead-form" action="#" method="POST" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <input type="text" id="lead-name" class="lead-input" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="lead-mobile" class="lead-input" placeholder="Contact Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="lead-email" class="lead-input" placeholder="Email ID" required>
+                </div>
+                <button type="submit" class="lead-submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- BROCHURE BANNER -->
+    <section class="footer-promo-banner">
+        <img src="images/fb1.png" alt="Discover Furniture Crafted by Ark" class="footer-banner-bg">
+        <div class="footer-banner-content">
+            <h2 class="footer-banner-heading">Discover Furniture<br>Crafted by Ark</h2>
+            <button class="footer-cta-btn">Download Brochure Now</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <!-- Reusing site footer structure -->
+        <div class="footer-container">
+            <div class="footer-brand-area">
+                <div class="footer-logo"><img src="images/footerlogo.png" alt="Ark Logo" class="ark-footer-logo"></div>
+                <p class="footer-description">At ARK Furniture, we create thoughtfully designed pieces that bring comfort, elegance, and purpose into every space.</p>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">About Us</h4>
+                    <ul class="footer-links"><li><a href="#">Blog</a></li><li><a href="#">Contact Us</a></li><li><a href="#">FAQ</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Shop</h4>
+                    <ul class="footer-links"><li><a href="#">Living</a></li><li><a href="#">Dining</a></li><li><a href="#">Bedroom</a></li></ul>
+                </div>
+                <div class="footer-col"><h4 class="footer-col-heading">Terms</h4><ul class="footer-links"><li><a href="#">Privacy</a></li></ul></div>
+                <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><p>+91 99621 00903</p></div>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="copyright">© 2026 Ark Furnitures</p>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

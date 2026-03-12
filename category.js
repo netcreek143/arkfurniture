@@ -182,29 +182,33 @@ function initCategoryPage() {
     if (resultsCountEl) resultsCountEl.textContent = `${data.resultsCount} Results`;
     
     if (productGrid) {
-        productGrid.innerHTML = data.products.map(product => `
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    ${product.discount ? `<div class="discount-badge">${product.discount}</div>` : ''}
-                    <button class="wishlist-btn ${product.isWishlisted ? 'active' : ''}">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="${product.isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <img src="${product.image}" alt="${product.name}" class="product-img">
-                    ${product.badge ? `<div class="status-strip">${product.badge}</div>` : ''}
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">${product.name}</h3>
-                    <div class="product-prices">
-                        <span class="old-price">${product.oldPrice}</span>
-                        <span class="new-price">${product.newPrice}</span>
+        productGrid.innerHTML = data.products.map(product => {
+            // Use name-slug for linking to the master template
+            const slug = product.name.toLowerCase().replace(/ /g, '-');
+            return `
+                <div class="product-card" onclick="window.location.href='product.html?id=${slug}'" style="cursor: pointer;">
+                    <div class="product-image-wrapper">
+                        ${product.discount ? `<div class="discount-badge">${product.discount}</div>` : ''}
+                        <button class="wishlist-btn ${product.isWishlisted ? 'active' : ''}" onclick="event.stopPropagation();">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="${product.isWishlisted ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        ${product.badge ? `<div class="status-strip">${product.badge}</div>` : ''}
                     </div>
-                    <div class="product-taxes">Price inclusive of all taxes | Pan India Shipping</div>
-                    <div class="product-emi">EMI starts from ${product.emi}</div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-prices">
+                            <span class="old-price">${product.oldPrice}</span>
+                            <span class="new-price">${product.newPrice}</span>
+                        </div>
+                        <div class="product-taxes">Price inclusive of all taxes | Pan India Shipping</div>
+                        <div class="product-emi">EMI starts from ${product.emi}</div>
+                    </div>
                 </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 }
 
