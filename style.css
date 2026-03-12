@@ -1277,7 +1277,7 @@ a {
 .testimonials-section {
     position: relative;
     background-color: #ffffff;
-    padding: 60px 0 100px;
+    padding: 60px 0 40px;
     width: 100%;
     z-index: 1;
 }
@@ -1498,7 +1498,7 @@ a {
 .lead-capture-section {
     background-color: #e8e8e8;
     /* Continue the darker grey from the testimonial split */
-    padding: 100px var(--padding-x) 120px;
+    padding: 40px var(--padding-x) 120px;
     width: 100%;
     text-align: center;
 }
