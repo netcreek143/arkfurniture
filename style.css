@@ -1221,6 +1221,11 @@ a {
     align-items: center;
     gap: 20px;
     /* icon-to-text alignment */
+    transition: transform 0.3s ease;
+}
+
+.usp-card:hover {
+    transform: translateY(-5px);
 }
 
 .usp-icon {
@@ -1229,6 +1234,11 @@ a {
     flex-shrink: 0;
     color: var(--color-black);
     /* minimal black line icon */
+    transition: color 0.3s ease;
+}
+
+.usp-card:hover .usp-icon {
+    color: var(--color-orange);
 }
 
 .usp-text {
@@ -1237,6 +1247,11 @@ a {
     font-weight: 400;
     color: var(--color-black);
     line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.usp-card:hover .usp-text {
+    color: var(--color-orange);
 }
 
 /* Responsive adjustments for Bedroom Section */
