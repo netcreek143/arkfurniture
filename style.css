@@ -2272,3 +2272,24 @@ a {
         padding: 40px 30px;
     }
 }
+
+/* Authentication State Styles */
+.auth-error-msg {
+    color: #d93025;
+    background-color: #fce8e6;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: none; /* Shown via JS */
+    text-align: center;
+}
+
+.auth-error-msg.visible {
+    display: block;
+}
+
+#navbarLoginBtn.is-logged-in #navbarLoginText::after {
+    /* Optional: status indicator */
+    color: inherit;
+}
