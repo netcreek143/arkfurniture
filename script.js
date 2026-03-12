@@ -198,4 +198,39 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial state
         updateCollectionCarousel();
     }
+
+    // Modal Interaction
+    const modalOverlay = document.getElementById('loginModalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('loginPassword');
+    
+    // Open by default as requested
+    if (modalOverlay) {
+        modalOverlay.classList.add('is-active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('is-active');
+            document.body.style.overflow = 'auto'; // Re-enable scroll
+        });
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('is-active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+        });
+    }
 });
