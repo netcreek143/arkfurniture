@@ -976,12 +976,22 @@ a {
     overflow: hidden;
     padding: 24px;
     /* Ensure images have a little breathing room from edges */
+    transition: transform 0.3s ease;
+}
+
+.grid-card:hover .grid-tile {
+    transform: translateY(-8px);
 }
 
 .grid-img {
     object-fit: contain;
     width: 125%;
     height: 125%;
+    transition: transform 0.5s ease;
+}
+
+.grid-card:hover .grid-img {
+    transform: scale(1.1);
 }
 
 /* Product Specific Tweaks Removed for Unified Scaling */
@@ -992,6 +1002,11 @@ a {
     font-weight: 400;
     color: var(--color-black);
     text-align: left;
+    transition: color 0.3s ease;
+}
+
+.grid-card:hover .grid-label {
+    color: var(--color-orange);
 }
 
 /* Responsive adjustments for Category Grid */
