@@ -150,4 +150,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Curated Designs Carousel
+    const collectionsPrev = document.querySelector('.featured-collections .left-arrow');
+    const collectionsNext = document.querySelector('.featured-collections .right-arrow');
+    const cardsRow = document.querySelector('.cards-row');
+    const cards = document.querySelectorAll('.category-card');
+    
+    if (collectionsPrev && collectionsNext && cardsRow && cards.length > 0) {
+        let currentCollectionSlide = 0;
+        const cardsToShow = 3;
+        const maxSlides = Math.max(0, cards.length - cardsToShow);
+
+        collectionsNext.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentCollectionSlide < maxSlides) {
+                currentCollectionSlide++;
+                updateCollectionCarousel();
+            }
+        });
+
+        collectionsPrev.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentCollectionSlide > 0) {
+                currentCollectionSlide--;
+                updateCollectionCarousel();
+            }
+        });
+
+        function updateCollectionCarousel() {
+            const cardWidth = cards[0].getBoundingClientRect().width;
+            const gap = 30; // Defined in CSS
+            const offset = currentCollectionSlide * (cardWidth + gap);
+            cardsRow.style.transform = `translateX(-${offset}px)`;
+            
+            // Visual feedback for bounds
+            collectionsPrev.style.opacity = currentCollectionSlide === 0 ? '0.5' : '1';
+            collectionsPrev.style.pointerEvents = currentCollectionSlide === 0 ? 'none' : 'auto';
+            
+            collectionsNext.style.opacity = currentCollectionSlide === maxSlides ? '0.5' : '1';
+            collectionsNext.style.pointerEvents = currentCollectionSlide === maxSlides ? 'none' : 'auto';
+        }
+        
+        // Responsive handling - reset if window slides
+        window.addEventListener('resize', updateCollectionCarousel);
+        
+        // Initial state
+        updateCollectionCarousel();
+    }
 });

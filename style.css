@@ -540,17 +540,26 @@ a {
     opacity: 1;
 }
 
-.cards-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    /* Equal spacing between cards */
+.cards-viewport {
+    overflow: hidden;
     flex: 1;
+    margin: 0 -15px;
+    /* Offset card padding for edge alignment */
+    padding: 0 15px;
+}
+
+.cards-row {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .category-card {
     display: flex;
     flex-direction: column;
+    flex: 0 0 calc((100% - 60px) / 3);
+    /* 3 cards visible at a time */
+    min-width: 0;
 }
 
 .card-img-wrapper {
