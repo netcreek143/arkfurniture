@@ -89,6 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Video Testimonial Mute Toggle
     const audioBtns = document.querySelectorAll('.audio-btn');
+    
+    // SVG Icons for toggling
+    const muteSVG = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mute-icon">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>`;
+        
+    const speakerSVG = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="speaker-icon">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>`;
+
     audioBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const card = btn.closest('.testimonial-card');
@@ -97,15 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (video) {
                 video.muted = !video.muted;
                 
-                // Reaction: Toggle class for visual feedback
-                btn.classList.toggle('is-unmuted');
-                
-                // Optional: Swap icons or change color (handled in CSS via .is-unmuted)
-                if (!video.muted) {
+                // Reaction: Toggle class and swap SVG
+                if (video.muted) {
+                    btn.classList.remove('is-unmuted');
+                    btn.innerHTML = muteSVG;
+                    console.log('Video muted');
+                } else {
+                    btn.classList.add('is-unmuted');
+                    btn.innerHTML = speakerSVG;
                     console.log('Video unmuted, audio playing');
                     video.play(); // Ensure it keeps playing
-                } else {
-                    console.log('Video muted');
                 }
             }
         });
