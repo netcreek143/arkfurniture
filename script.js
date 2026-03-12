@@ -97,13 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (video) {
                 video.muted = !video.muted;
                 
-                // Toggle Icon (Simple approach: swap opacity or replace innerHTML)
-                // Here we'll just toggle a class for visual feedback if needed
+                // Reaction: Toggle class for visual feedback
                 btn.classList.toggle('is-unmuted');
                 
+                // Optional: Swap icons or change color (handled in CSS via .is-unmuted)
                 if (!video.muted) {
-                    // Force play if it was paused for some reason
-                    video.play();
+                    console.log('Video unmuted, audio playing');
+                    video.play(); // Ensure it keeps playing
+                } else {
+                    console.log('Video muted');
                 }
             }
         });
