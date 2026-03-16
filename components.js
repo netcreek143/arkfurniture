@@ -59,9 +59,8 @@ const SharedComponents = {
                     <span class="badge" id="wishlistBadge" style="display:none">0</span>
                 </a>
                 <a href="#" class="icon-link" id="navbarCartBtn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
                         <path d="M16 10a4 4 0 0 1-8 0"></path>
                     </svg>
                     <span class="badge" id="cartBadge" style="display:none">0</span>
@@ -138,16 +137,24 @@ const SharedComponents = {
                 </div>
                 <div class="footer-columns">
                     <div class="footer-col">
-                        <h4 class="footer-col-heading">About Us</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
+                        <button class="footer-col-heading footer-accordion-btn" aria-expanded="false">
+                            About Us
+                            <svg class="footer-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="footer-accordion-body">
+                            <ul class="footer-links">
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="footer-col shop-col">
-                        <h4 class="footer-col-heading">Shop</h4>
-                        <div class="shop-subcols">
+                        <button class="footer-col-heading footer-accordion-btn" aria-expanded="false">
+                            Shop
+                            <svg class="footer-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="footer-accordion-body shop-subcols">
                             <ul class="footer-links">
                                 <li><a href="category.html?type=foyer">Foyer</a></li>
                                 <li><a href="category.html?type=living">Living</a></li>
@@ -163,26 +170,35 @@ const SharedComponents = {
                         </div>
                     </div>
                     <div class="footer-col">
-                        <h4 class="footer-col-heading">Terms and Conditions</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Return Policy</a></li>
-                            <li><a href="#">Shipping Policy</a></li>
-                            <li><a href="#">Warranty Policy</a></li>
-                        </ul>
+                        <button class="footer-col-heading footer-accordion-btn" aria-expanded="false">
+                            Terms and Conditions
+                            <svg class="footer-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="footer-accordion-body">
+                            <ul class="footer-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                                <li><a href="#">Shipping Policy</a></li>
+                                <li><a href="#">Warranty Policy</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="footer-col contact-col">
-                        <h4 class="footer-col-heading">Contact us</h4>
-                        <ul class="footer-links">
-                            <li><a href="tel:+919962100903">+91 99621 00903</a></li>
-                            <li><a href="mailto:info@arkfurniture.in">info@arkfurniture.in</a></li>
-                        </ul>
-                        <div class="social-icons">
-                            <!-- SVG Social Icons Re-injected here -->
-                            <a href="#" class="social-link" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"></path></svg></a>
-                            <a href="#" class="social-link" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
-                            <a href="#" class="social-link" aria-label="X"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></a>
-                            <a href="#" class="social-link" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186a2.6 2.6 0 0 0-1.826-1.84c-1.611-.435-8.056-.435-8.056-.435s-6.445 0-8.056.436a2.6 2.6 0 0 0-1.826 1.84C1.385 7.821 1.385 12 1.385 12s0 4.18.433 5.814a2.6 2.6 0 0 0 1.826 1.84c1.611.432 8.056.432 8.056.432s6.445 0 8.056-.432a2.6 2.6 0 0 0 1.826-1.84c.433-1.635.433-5.814.433-5.814s0-4.178-.433-5.814zm-11.83 9.07v-6.512l6.095 3.256-6.095 3.256z"></path></svg></a>
+                        <button class="footer-col-heading footer-accordion-btn" aria-expanded="false">
+                            Contact us
+                            <svg class="footer-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="footer-accordion-body">
+                            <ul class="footer-links">
+                                <li><a href="tel:+919962100903">+91 99621 00903</a></li>
+                                <li><a href="mailto:info@arkfurniture.in">info@arkfurniture.in</a></li>
+                            </ul>
+                            <div class="social-icons">
+                                <a href="#" class="social-link" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"></path></svg></a>
+                                <a href="#" class="social-link" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+                                <a href="#" class="social-link" aria-label="X"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></a>
+                                <a href="#" class="social-link" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186a2.6 2.6 0 0 0-1.826-1.84c-1.611-.435-8.056-.435-8.056-.435s-6.445 0-8.056.436a2.6 2.6 0 0 0-1.826 1.84C1.385 7.821 1.385 12 1.385 12s0 4.18.433 5.814a2.6 2.6 0 0 0 1.826 1.84c1.611.432 8.056.432 8.056.432s6.445 0 8.056-.432a2.6 2.6 0 0 0 1.826-1.84c.433-1.635.433-5.814.433-5.814s0-4.178-.433-5.814zm-11.83 9.07v-6.512l6.095 3.256-6.095 3.256z"></path></svg></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -261,7 +277,7 @@ const SharedComponents = {
                 </button>
                 <div class="video-wrapper">
                     <video id="siteVideoPlayer" width="100%" height="auto" controls>
-                        <source src="videos/bedroom_promo.mp4" type="video/mp4">
+                        <source src="videos/cv1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -450,6 +466,7 @@ const SharedComponents = {
         this.initVideoModal();
         this.initHeaderFeatures();
         this.initLeadForm();
+        this.initFooterAccordion();
         
         // Finalize state UI
         this.Cart.sync();
@@ -489,6 +506,29 @@ const SharedComponents = {
                 loginModal.classList.add('is-active');
             });
         }
+    },
+
+    initFooterAccordion() {
+        const isMobile = () => window.innerWidth <= 768;
+        const btns = document.querySelectorAll('.footer-accordion-btn');
+
+        btns.forEach(btn => {
+            const body = btn.nextElementSibling; // .footer-accordion-body
+            if (!body) return;
+
+            btn.addEventListener('click', () => {
+                if (!isMobile()) return;
+                const isOpen = body.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen);
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (!isMobile()) {
+                document.querySelectorAll('.footer-accordion-body').forEach(b => b.classList.remove('is-open'));
+                btns.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+            }
+        });
     },
 
     // --- CART MANAGER ---
@@ -670,21 +710,27 @@ const SharedComponents = {
             const overlay = document.getElementById('searchOverlay');
             if (!overlay) return;
             
-            if (!query) {
+            if (!query || query.trim().length < 2) {
                 this.resetResults();
                 return;
             }
 
+            const q = query.toLowerCase().trim();
+
             // Ensure products object exists
-            if (typeof products === 'undefined') {
+            const productsData = window.products || products;
+            if (typeof productsData === 'undefined') {
                 console.error("Products data not loaded for search.");
                 return;
             }
 
-            const results = Object.values(products).filter(p => 
-                (p.name && p.name.toLowerCase().includes(query.toLowerCase())) ||
-                (p.category && p.category.toLowerCase().includes(query.toLowerCase()))
-            );
+            const results = Object.values(productsData).filter(p => {
+                if (!p || !p.name) return false;
+                const nameMatch = p.name.toLowerCase().includes(q);
+                const catMatch = p.category && p.category.toLowerCase().includes(q);
+                const descMatch = p.description && p.description.toLowerCase().includes(q);
+                return nameMatch || catMatch || descMatch;
+            });
 
             this.renderResults(results);
         },

@@ -328,12 +328,32 @@ function initCategoryPage() {
     // Update Quick Tiles
     const tilesContainer = document.getElementById('quickTilesRow');
     if (tilesContainer) {
+        // SVG Mapping for Category Icons
+        const icons = {
+            chair: '<path d="M7 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7zm0 2h10v10H7V4zM5 18a2 2 0 0 0-2 2v2h2v-2h14v2h2v-2a2 2 0 0 0-2-2H5z"/>',
+            table: '<path d="M3 3h18v2H3V3zm2 4h14v2h-1.5L16 19h-2l1.2-10H8.8L10 19H8l-1.5-10H5V7zm5 2h4l-.5 4h-3l-.5-4z"/>',
+            bench: '<path d="M3 7h18a2 2 0 0 1 2 2v6h-2v-4H5v4H3v-6a2 2 0 0 1 2-2zm2 10h2v4H5v-4zm12 0h2v4h-2v-4z"/>',
+            grid: '<rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>',
+            archive: '<polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line>',
+            tv: '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>',
+            'file-text': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>',
+            coffee: '<path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line>',
+            loader: '<line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>',
+            image: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline>',
+            shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>',
+            disc: '<circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle>',
+            award: '<circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>',
+            star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>',
+            'arrow-up': '<line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline>',
+            minus: '<line x1="5" y1="12" x2="19" y2="12"></line>',
+            circle: '<circle cx="12" cy="12" r="10"></circle>'
+        };
+
         tilesContainer.innerHTML = data.quickTiles.map(tile => `
             <div class="quick-tile">
                 <div class="tile-icon-box">
-                    <!-- Icon placeholder logic based on tile.icon -->
-                    <svg class="tile-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <svg class="tile-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        ${icons[tile.icon] || '<rect x="4" y="4" width="16" height="16" rx="2"></rect>'}
                     </svg>
                 </div>
                 <span class="tile-label">${tile.label}</span>

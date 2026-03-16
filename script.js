@@ -160,17 +160,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const video = card.querySelector('.testimonial-video');
             
             if (video) {
+                const willUnmute = video.muted;
+                
+                if (willUnmute) {
+                    // Mute all other videos first
+                    document.querySelectorAll('.testimonial-video').forEach(v => {
+                        if (v !== video) {
+                            v.muted = true;
+                            const vBtn = v.closest('.testimonial-card').querySelector('.audio-btn');
+                            if (vBtn) {
+                                vBtn.classList.remove('is-unmuted');
+                                vBtn.innerHTML = muteSVG;
+                            }
+                        }
+                    });
+                }
+
                 video.muted = !video.muted;
                 
                 // Reaction: Toggle class and swap SVG
                 if (video.muted) {
                     btn.classList.remove('is-unmuted');
                     btn.innerHTML = muteSVG;
-                    console.log('Video muted');
                 } else {
                     btn.classList.add('is-unmuted');
                     btn.innerHTML = speakerSVG;
-                    console.log('Video unmuted, audio playing');
                     video.play(); // Ensure it keeps playing
                 }
             }
