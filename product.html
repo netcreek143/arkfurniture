@@ -13,53 +13,8 @@
 </head>
 <body>
 
-    <!-- TOP INFO BAR -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <span>Designed for Comfort</span>
-            <span class="separator">|</span>
-            <span>Delivered Across India</span>
-        </div>
-        <div class="top-bar-right">
-            <span>+91 99621 00903</span>
-            <span class="separator">|</span>
-            <span>info@arkfurniture.in</span>
-        </div>
-    </div>
-
-    <!-- MAIN NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Ark Logo" class="logo-img">
-            </a>
-        </div>
-        <div class="nav-center">
-            <a href="category.html?type=foyer">Foyer</a>
-            <a href="category.html?type=living">Living</a>
-            <a href="category.html?type=dining">Dining</a>
-            <a href="category.html?type=bedroom">Bedroom</a>
-            <a href="category.html?type=modular">Modular</a>
-            <a href="category.html?type=outdoor">Outdoor</a>
-            <a href="category.html?type=decor">Decor</a>
-            <a href="category.html?type=lightings">Lightings</a>
-        </div>
-        <div class="nav-right">
-            <a href="#" class="nav-icon-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>Login</span>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            </a>
-        </div>
-    </nav>
+    <!-- DYNAMIC SHARED HEADER (Top Bar + Navbar) -->
+    <header id="shared-header"></header>
 
     <!-- BREADCRUMBS -->
     <div class="pdp-breadcrumbs" id="pdpBreadcrumbs">
@@ -151,36 +106,34 @@
     </section>
 
     <!-- PROMO BANNER (BEDS) -->
-    <section class="bedroom-promo">
-        <div class="bedroom-promo-container">
-            <div class="bedroom-bg-wrapper">
-                <img src="images/hero1.png" alt="Beds That Define Better Living" class="bedroom-promo-img">
-                <div class="bedroom-promo-overlay">
-                    <div class="play-btn-wrapper">
-                        <button class="play-btn" aria-label="Play Video">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="32" fill="#E67E22" />
-                                <path d="M42 32L27 40.6603V23.3397L42 32Z" fill="white" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="bedroom-text-content">
-                        <h2 class="bedroom-heading">Beds That<br>Define Better Living</h2>
-                        <p class="bedroom-subheading">Play Video to Explore Finishes</p>
-                    </div>
-                    <div class="bedroom-side-text">
-                        Designed for deep rest, styled for modern homes.
-                    </div>
-                </div>
-            </div>
-            <!-- Arrows -->
-            <button class="banner-arrow prev" aria-label="Previous">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <section class="bedroom-promo-section">
+        <div class="bedroom-banner-container">
+            <button class="banner-arrow left-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
             </button>
-            <button class="banner-arrow next" aria-label="Next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="bedroom-banner">
+                <img src="images/br1.png" alt="Bedroom Promo" class="bedroom-banner-img">
+                <div class="bedroom-overlay"></div>
+                <div class="bedroom-content-wrapper">
+                    <div class="play-button">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="bedroom-text-block">
+                        <h2 class="bedroom-heading">Beds That<br>Define Better Living</h2>
+                        <span class="bedroom-support-text">Play Video to Explore Finishes</span>
+                    </div>
+                    <div class="bedroom-divider"></div>
+                    <p class="bedroom-subtitle">Designed for deep rest, styled for<br>modern homes.</p>
+                </div>
+            </div>
+            <button class="banner-arrow right-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
@@ -188,39 +141,39 @@
     </section>
 
     <!-- 8-FEATURE ICON GRID -->
-    <section class="quality-features">
-        <div class="features-container">
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>10 Year Warranty</p>
+    <section class="usp-section">
+        <div class="usp-grid-container">
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                <div class="usp-text">10 Year Warranty</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>Direct Selling : Factory to Customer</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"></path><path d="M5 20V8l5-3 5 3v12"></path><path d="M19 20V12l-4-2"></path><path d="M9 16v4"></path></svg>
+                <div class="usp-text">Direct Selling : Factory to Customer</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>66 Quality Checks</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14h6"></path><path d="M9 18h6"></path><path d="M9 10h.01"></path></svg>
+                <div class="usp-text">66 Quality Checks</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>KD (Kiln Dried) and HT (Heat Treated)</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <div class="usp-text">KD (Kiln Dried) and HT (Heat Treated)</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>Ergonomically Designed</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                <div class="usp-text">Ergonomically Designed</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>Generations Long Durability</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                <div class="usp-text">Generations Long Durability</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>All India service Warranty</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                <div class="usp-text">All India service Warranty</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon-circle"><img src="images/fb1.png" style="width:24px; filter:invert(1);"></div>
-                <p>Free of Child Labour</p>
+            <div class="usp-card">
+                <svg class="usp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <div class="usp-text">Free of Child Labour</div>
             </div>
         </div>
     </section>
@@ -241,64 +194,35 @@
         </div>
     </section>
 
-    <!-- CONSULTATION FORM -->
-    <section class="lead-capture-section">
-        <div class="lead-capture-container">
-            <div class="lead-capture-header">
-                <h2 class="lead-heading">Find Furniture Made for You</h2>
-                <p class="lead-paragraph">Share your requirement with us and our furniture experts will help you find the right fit for your home collections.</p>
-            </div>
+    <!-- DYNAMIC LEAD CAPTURE -->
+    <div id="shared-lead-capture"></div>
 
-            <form class="lead-form" action="#" method="POST" onsubmit="event.preventDefault();">
-                <div class="form-group">
-                    <input type="text" id="lead-name" class="lead-input" placeholder="Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="lead-mobile" class="lead-input" placeholder="Contact Number" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="lead-email" class="lead-input" placeholder="Email ID" required>
-                </div>
-                <button type="submit" class="lead-submit-btn">Submit</button>
-            </form>
-        </div>
-    </section>
+    <!-- DYNAMIC BROCHURE BANNER -->
+    <div id="shared-brochure-banner"></div>
 
-    <!-- BROCHURE BANNER -->
-    <section class="footer-promo-banner">
-        <img src="images/fb1.png" alt="Discover Furniture Crafted by Ark" class="footer-banner-bg">
-        <div class="footer-banner-content">
-            <h2 class="footer-banner-heading">Discover Furniture<br>Crafted by Ark</h2>
-            <button class="footer-cta-btn">Download Brochure Now</button>
-        </div>
-    </section>
+    <!-- DYNAMIC FOOTER -->
+    <div id="shared-footer"></div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <!-- Reusing site footer structure -->
-        <div class="footer-container">
-            <div class="footer-brand-area">
-                <div class="footer-logo"><img src="images/footerlogo.png" alt="Ark Logo" class="ark-footer-logo"></div>
-                <p class="footer-description">At ARK Furniture, we create thoughtfully designed pieces that bring comfort, elegance, and purpose into every space.</p>
-            </div>
-            <div class="footer-columns">
-                <div class="footer-col">
-                    <h4 class="footer-col-heading">About Us</h4>
-                    <ul class="footer-links"><li><a href="#">Blog</a></li><li><a href="#">Contact Us</a></li><li><a href="#">FAQ</a></li></ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-col-heading">Shop</h4>
-                    <ul class="footer-links"><li><a href="#">Living</a></li><li><a href="#">Dining</a></li><li><a href="#">Bedroom</a></li></ul>
-                </div>
-                <div class="footer-col"><h4 class="footer-col-heading">Terms</h4><ul class="footer-links"><li><a href="#">Privacy</a></li></ul></div>
-                <div class="footer-col"><h4 class="footer-col-heading">Contact</h4><p>+91 99621 00903</p></div>
-            </div>
-            <div class="footer-divider"></div>
-            <p class="copyright">© 2026 Ark Furnitures</p>
-        </div>
-    </footer>
+    <!-- DYNAMIC LOGIN MODAL -->
+    <div id="shared-login-modal"></div>
+
+    <!-- DYNAMIC VIDEO MODAL -->
+    <div id="shared-video-modal"></div>
+
+    <!-- DYNAMIC SEARCH OVERLAY -->
+    <div id="shared-search-overlay"></div>
+
+    <!-- DYNAMIC WISHLIST SIDEBAR -->
+    <div id="shared-wishlist-sidebar"></div>
+
+    <!-- DYNAMIC CART SIDEBAR -->
+    <div id="shared-cart-sidebar"></div>
+
+    <!-- DYNAMIC MOBILE MENU -->
+    <div id="shared-mobile-menu"></div>
 
     <script src="products.js"></script>
+    <script src="components.js"></script>
     <script src="product.js"></script>
 </body>
 </html>

@@ -85,8 +85,82 @@ const products = {
         discount: "25% OFF",
         image: "images/sd4.png",
         badge: "MADE TO ORDER"
+    },
+    // Living
+    "cloud-modular-sofa": {
+        id: "cloud-modular-sofa",
+        name: "Cloud Modular Sofa",
+        price: "76,500",
+        oldPrice: "85,000",
+        discount: "10% OFF",
+        image: "images/sd1.png",
+        emi: "4,500"
+    },
+    "oak-coffee-table": {
+        id: "oak-coffee-table",
+        name: "Oak Coffee Table",
+        price: "18,700",
+        oldPrice: "22,000",
+        discount: "15% OFF",
+        image: "images/sd2.png"
+    },
+    // Bedroom
+    "caris-queen-bed": {
+        id: "caris-queen-bed",
+        name: "Caris Queen Bed",
+        price: "44,000",
+        oldPrice: "55,000",
+        discount: "20% OFF",
+        image: "images/sd5.png"
+    },
+    // Foyer
+    "slatted-shoe-rack": {
+        id: "slatted-shoe-rack",
+        name: "Slatted Shoe Rack",
+        price: "16,200",
+        oldPrice: "18,000",
+        discount: "10% OFF",
+        image: "images/sd8.png"
+    },
+    // Modular
+    "l-shaped-kitchen": {
+        id: "l-shaped-kitchen",
+        name: "L-Shaped Kitchen",
+        price: "2,50,000",
+        oldPrice: "2,50,000",
+        image: "images/sd2.png",
+        badge: "MADE TO ORDER"
+    },
+    // Decor
+    "abstract-canvas-art": {
+        id: "abstract-canvas-art",
+        name: "Abstract Canvas Art",
+        price: "8,500",
+        oldPrice: "8,500",
+        image: "images/sd6.png"
+    },
+    // Lightings
+    "crystal-chandelier": {
+        id: "crystal-chandelier",
+        name: "Crystal Chandelier",
+        price: "95,000",
+        oldPrice: "95,000",
+        image: "images/sd8.png"
+    },
+    "velvet-accent-chair": {
+        id: "velvet-accent-chair",
+        name: "Velvet Accent Chair",
+        price: "30,400",
+        oldPrice: "32,000",
+        discount: "5% OFF",
+        image: "images/sd4.png",
+        badge: "LIMITED EDITION",
+        emi: "1,800"
     }
 };
+
+// Explicitly attach to window for cross-script access
+window.products = products;
 
 // Global function to get product by ID
 function getProductById(id) {

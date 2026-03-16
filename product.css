@@ -155,6 +155,10 @@
     margin-bottom: 30px;
 }
 
+.stock-status.stock-out-text {
+    color: #999;
+}
+
 /* Customisation */
 .customise-section {
     border-top: 1px solid #eee;
@@ -339,6 +343,14 @@
     font-size: 16px;
 }
 
+.acc-header svg {
+    transition: transform 0.3s ease;
+}
+
+.acc-row.open .acc-header svg {
+    transform: rotate(45deg);
+}
+
 /* Feature Icon Grid Overrides if any */
 .quality-features {
     padding-top: 50px;
@@ -375,20 +387,88 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    .pdp-breadcrumbs {
+        padding: 20px;
+    }
+
+    .product-detail-section {
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+
     .pdp-container {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
     }
-    .pdp-breadcrumbs, .product-detail-section, .feature-icon-grid, .consultation-section {
-        padding: 40px;
+
+    .gallery-nav.prev { left: 10px; }
+    .gallery-nav.next { right: 10px; }
+
+    .pdp-title {
+        font-size: 24px;
+        margin-bottom: 16px;
     }
-    .feature-grid-container {
+
+    .pdp-action-row {
+        flex-direction: column;
+    }
+
+    .quantity-selector {
+        width: 100%;
+    }
+
+    .price-btn {
+        display: none; /* Already showing price in price-row */
+    }
+
+    .add-to-cart-btn {
+        padding: 16px;
+    }
+
+    .custom-option-cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    .underline-form {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+}
+
+/* 10. USP Section */
+.usp-section {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.usp-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+    .usp-grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 480px) {
+    .usp-grid-container {
+        gap: 16px;
+    }
+    
+    .usp-card {
+        padding: 20px 15px;
+    }
+}
+
+/* Common Product Card Utilities */
+.product-card {
+    cursor: pointer;
+}
+
+.product-taxes-sm {
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
 }

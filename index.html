@@ -16,78 +16,8 @@
 
 <body>
 
-    <!-- TOP INFO BAR -->
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <span>Designed for Comfort</span>
-            <span class="separator">|</span>
-            <span>Delivered Across India</span>
-        </div>
-        <div class="top-bar-right">
-            <span>+91 99621 00903</span>
-            <span class="separator">|</span>
-            <span>info@arkfurniture.in</span>
-        </div>
-    </div>
-
-    <!-- MAIN NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <!-- Logo Image -->
-            <a href="#" class="logo-link">
-                <img src="images/logo.png" alt="Ark Logo" class="logo-img">
-            </a>
-        </div>
-
-        <div class="nav-center">
-            <a href="category.html?type=foyer">Foyer</a>
-            <a href="category.html?type=living">Living</a>
-            <a href="category.html?type=dining">Dining</a>
-            <a href="category.html?type=bedroom">Bedroom</a>
-            <a href="category.html?type=modular">Modular</a>
-            <a href="category.html?type=outdoor">Outdoor</a>
-            <a href="category.html?type=decor">Decor</a>
-            <a href="category.html?type=lightings">Lightings</a>
-        </div>
-
-        <div class="nav-right">
-            <a href="#" class="nav-icon-link" id="navbarLoginBtn">
-                <!-- User Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span id="navbarLoginText">Login</span>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <!-- Search Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <!-- Heart/Wishlist Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                    </path>
-                </svg>
-            </a>
-            <a href="#" class="nav-icon-link">
-                <!-- Bag/Cart Icon -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-            </a>
-        </div>
-    </nav>
+    <!-- DYNAMIC SHARED HEADER (Top Bar + Navbar) -->
+    <header id="shared-header"></header>
 
     <!-- HERO SECTION -->
     <section class="hero-section">
@@ -154,7 +84,7 @@
     </section>
 
     <!-- FEATURED COLLECTIONS SECTION -->
-    <section class="featured-collections">
+    <section class="featured-collections reveal">
         <div class="collections-header">
             <h2 class="collections-title">Curated Designs, Crafted for You</h2>
             <p class="collections-desc">
@@ -179,28 +109,28 @@
                     <!-- Card 1 -->
                     <div class="category-card">
                         <div class="card-img-wrapper">
-                            <img src="images/cd1.png" alt="New Arrival - Orange Sofa" class="card-img">
+                            <img src="images/sd1.png" alt="New Arrival" class="card-img">
                         </div>
                         <h3 class="card-title">New Arrival</h3>
-                        <a href="#" class="card-link">Explore Now ↗</a>
+                        <a href="category.html?type=living" class="card-link">Explore Now ↗</a>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="category-card">
                         <div class="card-img-wrapper">
-                            <img src="images/cd2.png" alt="Ready to Ship - Green Chair" class="card-img">
+                            <img src="images/sd4.png" alt="Ready to Ship" class="card-img">
                         </div>
                         <h3 class="card-title">Ready to Ship</h3>
-                        <a href="#" class="card-link">Explore Now ↗</a>
+                        <a href="category.html?type=dining" class="card-link">Explore Now ↗</a>
                     </div>
 
                     <!-- Card 3 -->
                     <div class="category-card">
                         <div class="card-img-wrapper">
-                            <img src="images/cd3.png" alt="Trending Now - Coffee Table" class="card-img">
+                            <img src="images/sd6.png" alt="Trending Now" class="card-img">
                         </div>
                         <h3 class="card-title">Trending Now</h3>
-                        <a href="#" class="card-link">Explore Now ↗</a>
+                        <a href="category.html?type=bedroom" class="card-link">Explore Now ↗</a>
                     </div>
 
                     <!-- Card 4 (New) -->
@@ -252,7 +182,7 @@
     </section>
 
     <!-- CATEGORY BANNER SECTION -->
-    <section class="category-banner-section">
+    <section class="category-banner-section reveal">
         <div class="category-banner-container">
             <!-- Left Arrow -->
             <button class="banner-arrow left-arrow" id="sofas-prev">
@@ -289,7 +219,7 @@
     </section>
 
     <!-- CATEGORY GRID SHOWCASE SECTION -->
-    <section class="category-grid-section">
+    <section class="category-grid-section reveal">
         <div class="category-grid-header">
             <h2 class="grid-heading">Spaces Designed for Modern Living</h2>
             <p class="grid-paragraph">
@@ -301,61 +231,61 @@
 
         <div class="category-grid-container">
             <!-- Row 1 -->
-            <div class="grid-card">
+            <a href="category.html?type=foyer" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd1.png" alt="Foyer" class="grid-img img-foyer">
                 </div>
                 <h3 class="grid-label">Foyer</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=living" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd2.png" alt="Living" class="grid-img img-living">
                 </div>
                 <h3 class="grid-label">Living</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=dining" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd3.png" alt="Dining" class="grid-img img-dining">
                 </div>
                 <h3 class="grid-label">Dining</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=bedroom" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd4.png" alt="Bedroom" class="grid-img img-bedroom">
                 </div>
                 <h3 class="grid-label">Bedroom</h3>
-            </div>
+            </a>
 
             <!-- Row 2 -->
-            <div class="grid-card">
+            <a href="category.html?type=modular" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd5.png" alt="Modular" class="grid-img img-modular">
                 </div>
                 <h3 class="grid-label">Modular</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=outdoor" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd6.png" alt="Outdoor" class="grid-img img-outdoor">
                 </div>
                 <h3 class="grid-label">Outdoor</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=decor" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd7.png" alt="Decor" class="grid-img img-decor">
                 </div>
                 <h3 class="grid-label">Decor</h3>
-            </div>
-            <div class="grid-card">
+            </a>
+            <a href="category.html?type=lightings" class="grid-card">
                 <div class="grid-tile">
                     <img src="images/sd8.png" alt="Lightings" class="grid-img img-lightings">
                 </div>
                 <h3 class="grid-label">Lightings</h3>
-            </div>
+            </a>
         </div>
     </section>
 
     <!-- BEDROOM PROMO BANNER SECTION -->
-    <section class="bedroom-promo-section">
+    <section class="bedroom-promo-section reveal">
         <div class="bedroom-banner-container">
             <!-- Left Arrow -->
             <button class="banner-arrow left-arrow">
@@ -488,7 +418,7 @@
     </section>
 
     <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section">
+    <section class="testimonials-section reveal">
         <div class="testimonials-bg-split"></div>
         <div class="testimonials-header">
             <h2 class="testimonials-heading">Real Homes. Real Experiences.</h2>
@@ -570,222 +500,28 @@
         </div>
     </section>
 
-    <!-- LEAD CAPTURE SECTION -->
-    <section class="lead-capture-section">
-        <div class="lead-capture-container">
-            <div class="lead-capture-header">
-                <h2 class="lead-heading">Find Furniture Made for You</h2>
-                <p class="lead-paragraph">Share a few details and let us help you discover furniture that perfectly fits
-                    your home and lifestyle.<br>Our design experts will guide you with thoughtfully curated Ark
-                    collections.</p>
-            </div>
+    <!-- DYNAMIC LEAD CAPTURE -->
+    <div id="shared-lead-capture" class="reveal"></div>
 
-            <form class="lead-form" action="#" method="POST" onsubmit="event.preventDefault();">
-                <div class="form-group">
-                    <input type="text" id="lead-name" class="lead-input" placeholder="Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="lead-mobile" class="lead-input" placeholder="Contact Number" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="lead-email" class="lead-input" placeholder="Email ID" required>
-                </div>
-                <button type="submit" class="lead-submit-btn">Submit</button>
-            </form>
-        </div>
-    </section>
+    <!-- DYNAMIC BROCHURE BANNER -->
+    <div id="shared-brochure-banner" class="reveal"></div>
 
-    <!-- FINAL PROMO BANNER -->
-    <section class="footer-promo-banner">
-        <img src="images/fb1.png"
-            alt="Discover Furniture Crafted by Ark" class="footer-banner-bg">
-        <div class="footer-banner-content">
-            <h2 class="footer-banner-heading">Discover Furniture<br>Crafted by Ark</h2>
-            <button class="footer-cta-btn">Download Brochure Now</button>
-        </div>
-    </section>
+    <!-- DYNAMIC FOOTER -->
+    <div id="shared-footer"></div>
 
-    <!-- SITE FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- Top Description Area -->
-            <div class="footer-brand-area">
-                <div class="footer-logo">
-                    <img src="images/footerlogo.png" alt="Ark Logo" class="ark-footer-logo">
-                </div>
-                <p class="footer-description">At ARK Furniture, we create thoughtfully designed pieces that bring
-                    comfort, elegance, and purpose into every space. From sculpted<br>lounge chairs to refined dining
-                    collections and serene bedroom essentials.</p>
-            </div>
+    <!-- DYNAMIC LOGIN MODAL -->
+    <div id="shared-login-modal"></div>
 
-            <!-- Footer Columns -->
-            <div class="footer-columns">
-                <!-- Column 1 -->
-                <div class="footer-col">
-                    <h4 class="footer-col-heading">About Us</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
+    <!-- DYNAMIC CART SIDEBAR -->
+    <div id="shared-cart-sidebar"></div>
 
-                <!-- Column 2 (Wider Shop Layout) -->
-                <div class="footer-col shop-col">
-                    <h4 class="footer-col-heading">Shop</h4>
-                    <div class="shop-subcols">
-                        <ul class="footer-links">
-                            <li><a href="#">Foyer</a></li>
-                            <li><a href="#">Living</a></li>
-                            <li><a href="#">Dining</a></li>
-                            <li><a href="#">Bedroom</a></li>
-                        </ul>
-                        <ul class="footer-links">
-                            <li><a href="#">Modular</a></li>
-                            <li><a href="#">Outdoor</a></li>
-                            <li><a href="#">Decor</a></li>
-                            <li><a href="#">Lightings</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- DYNAMIC MOBILE MENU -->
+    <div id="shared-mobile-menu"></div>
 
-                <!-- Column 3 -->
-                <div class="footer-col">
-                    <h4 class="footer-col-heading">Terms and Conditions</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Warranty Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4 -->
-                <div class="footer-col contact-col">
-                    <h4 class="footer-col-heading">Contact us</h4>
-                    <ul class="footer-links">
-                        <li><a href="tel:+919962100903">+91 99621 00903</a></li>
-                        <li><a href="mailto:info@arkfurniture.in">info@arkfurniture.in</a></li>
-                    </ul>
-                    <div class="social-icons">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                                <path
-                                    d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                                <path
-                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="X">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                                <path
-                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                                <path
-                                    d="M21.582 6.186a2.6 2.6 0 0 0-1.826-1.84c-1.611-.435-8.056-.435-8.056-.435s-6.445 0-8.056.436a2.6 2.6 0 0 0-1.826 1.84C1.385 7.821 1.385 12 1.385 12s0 4.18.433 5.814a2.6 2.6 0 0 0 1.826 1.84c1.611.432 8.056.432 8.056.432s6.445 0 8.056-.432a2.6 2.6 0 0 0 1.826-1.84c.433-1.635.433-5.814.433-5.814s0-4.178-.433-5.814zm-11.83 9.07v-6.512l6.095 3.256-6.095 3.256z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bottom Divider and Copyright -->
-            <div class="footer-divider"></div>
-            <p class="copyright">© 2026 Ark Furnitures</p>
-        </div>
-    </footer>
-
-    <!-- LOGIN MODAL OVERLAY -->
-    <div class="modal-overlay" id="loginModalOverlay">
-        <div class="login-modal">
-            <button class="modal-close" id="closeModal">&times;</button>
-            
-            <div class="modal-container">
-                <!-- Left Poster Panel -->
-                <div class="modal-poster">
-                    <!-- Placeholder content for Republic Day Sale Poster -->
-                    <div class="poster-content">
-                        <div class="poster-badge">REPUBLIC DAY Sale</div>
-                        <div class="poster-offer">Lowest Prices, Limited Time</div>
-                        <div class="poster-shipping">Free Shipping Available</div>
-                        <!-- Sofa image placeholder -->
-                        <img src="images/hero1.png" alt="Sale Poster" class="poster-img">
-                    </div>
-                </div>
-
-                <!-- Right Form Panel -->
-                <div class="modal-form">
-                    <h2 class="form-title">Login</h2>
-                    
-                    <div id="loginError" class="auth-error-msg"></div>
-
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Email \ Mobile Number*" required class="form-input">
-                        </div>
-                        
-                        <div class="form-group pass-group">
-                            <input type="password" placeholder="Password*" id="loginPassword" required class="form-input">
-                            <span class="password-toggle" id="togglePassword">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </span>
-                        </div>
-
-                        <div class="forgot-pass-wrapper">
-                            <a href="#" class="forgot-pass-link">Forgot Password</a>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-signin">Sign in</button>
-                            <button type="button" class="btn btn-otp">Request OTP</button>
-                        </div>
-                    </form>
-
-                    <div class="signup-prompt">
-                        Don't have an account? <a href="#" class="signup-link">Sign Up</a>
-                    </div>
-
-                    <div class="divider">Or</div>
-
-                    <div class="social-login">
-                        <button class="social-btn facebook">
-                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258V8.05h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                            </svg>
-                            Facebook
-                        </button>
-                        <button class="social-btn google">
-                            <svg width="18" height="18" viewBox="0 0 24 24">
-                                <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z"/>
-                                <path fill="#FBBC04" d="M16.04 18.013c-1.09.378-2.273.587-3.54.587-2.126 0-4.043-.844-5.462-2.218l-4.015 3.111C5.467 22.463 8.52 24 12 24c3.218 0 6.136-1.127 8.355-3l-4.315-2.987Z"/>
-                                <path fill="#4285F4" d="M23.49 12.275c0-.796-.134-1.573-.391-2.291H12v4.704h6.442a5.57 5.57 0 0 1-2.42 3.655l4.315 2.987c2.536-2.35 3.996-5.815 3.953-9.055Z"/>
-                                <path fill="#34A853" d="M5.266 14.235 1.24 17.35a11.97 11.97 0 0 0 3.785 2.145l4.015-3.111a7.062 7.062 0 0 1-3.774-2.149Z"/>
-                            </svg>
-                            Google
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Custom JavaScript for any basic interactivity -->
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
+    <script src="products.js"></script>
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 

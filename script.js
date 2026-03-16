@@ -4,25 +4,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Lenis Smooth Scrolling
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        smoothTouch: false,
-        touchMultiplier: 2,
-        infinite: false,
+    // --- Scroll Reveal Animation ---
+    // Handle this EARLY to prevent white screens if other scripts fail
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+        threshold: 0.15 
     });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
 
-    requestAnimationFrame(raf);
+    // Lenis Smooth Scrolling (Optional, robust check)
+    if (typeof Lenis !== 'undefined') {
+        try {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+                infinite: false,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+        } catch (e) {
+            console.warn('Lenis failed to initialize:', e);
+        }
+    } else {
+        console.warn('Lenis library not loaded via CDN.');
+    }
 
     // Header interaction - shadow on scroll
     const btnLeft = document.querySelector('.arrow-left');
@@ -199,126 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCollectionCarousel();
     }
 
-
-    // --- Authentication & Session Management ---
-    const AuthManager = {
-        KEY: 'ark_user_session',
-        
-        login(userData) {
-            localStorage.setItem(this.KEY, JSON.stringify({
-                ...userData,
-                loginTime: Date.now()
-            }));
-            this.updateUI();
-        },
-
-        logout() {
-            localStorage.removeItem(this.KEY);
-            this.updateUI();
-        },
-
-        isLoggedIn() {
-            return localStorage.getItem(this.KEY) !== null;
-        },
-
-        getUser() {
-            return JSON.parse(localStorage.getItem(this.KEY));
-        },
-
-        updateUI() {
-            const loginBtn = document.getElementById('navbarLoginBtn');
-            const loginText = document.getElementById('navbarLoginText');
-            
-            if (this.isLoggedIn()) {
-                if (loginText) loginText.textContent = 'Logout';
-                if (loginBtn) loginBtn.classList.add('is-logged-in');
-            } else {
-                if (loginText) loginText.textContent = 'Login';
-                if (loginBtn) loginBtn.classList.remove('is-logged-in');
-            }
-        }
-    };
-
-    // Modal Interaction
-    const modalOverlay = document.getElementById('loginModalOverlay');
-    const closeModalBtn = document.getElementById('closeModal');
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('loginPassword');
-    const loginForm = document.getElementById('loginForm');
-    const loginError = document.getElementById('loginError');
-    const navbarLoginBtn = document.getElementById('navbarLoginBtn');
-    
-    // Initial UI Update
-    AuthManager.updateUI();
-
-    // Open if not logged in (replaces the 'open by default' for a functional flow)
-    if (modalOverlay && !AuthManager.isLoggedIn()) {
-        modalOverlay.classList.add('is-active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Navbar Login/Logout Trigger
-    if (navbarLoginBtn) {
-        navbarLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (AuthManager.isLoggedIn()) {
-                AuthManager.logout();
-                alert('Successfully logged out.');
-            } else {
-                modalOverlay.classList.add('is-active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
-
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
-            modalOverlay.classList.remove('is-active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('is-active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-
-    if (togglePassword && passwordInput) {
-        togglePassword.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-        });
-    }
-
-    // Form Submission Handling
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const identifier = loginForm.querySelector('input[type="text"]').value;
-            const password = loginForm.querySelector('input[type="password"]').value;
-
-            // Mock Validation Logic
-            // For now, allow any non-empty input as a 'success'
-            if (identifier && password.length >= 4) {
-                if (loginError) loginError.classList.remove('visible');
-                
-                AuthManager.login({ username: identifier });
-                
-                // Close modal on success
-                modalOverlay.classList.remove('is-active');
-                document.body.style.overflow = 'auto';
-                
-                alert(`Welcome back, ${identifier}!`);
-            } else {
-                if (loginError) {
-                    loginError.textContent = 'Invalid credentials. Password must be at least 4 chars.';
-                    loginError.classList.add('visible');
-                }
-            }
-        });
-    }
 });

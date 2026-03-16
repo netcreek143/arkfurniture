@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = params.get('id') || 'natura-live-edge-dining-table';
     const product = getProductById(productId);
 
+    // 4. Track Recently Viewed (Moved up for better reliability)
+    trackRecentlyViewed(productId);
+
     if (!product) {
-        console.error("Product not found");
+        console.warn("Product data not found for:", productId);
         return;
     }
 
@@ -17,21 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initGallery(product);
     initQuantityStepper(product);
     initAccordions();
+    initPDPActions(product);
 });
+
+function trackRecentlyViewed(id) {
+    console.log('Saving to Recently Viewed:', id);
+    let viewed = JSON.parse(localStorage.getItem('ark_recent_viewed')) || [];
+    viewed = viewed.filter(v => v !== id);
+    viewed.unshift(id);
+    viewed = viewed.slice(0, 12);
+    localStorage.setItem('ark_recent_viewed', JSON.stringify(viewed));
+    console.log('Current history list:', viewed);
+}
 
 function renderPDP(product) {
     // Basic Info
     document.getElementById('productTitle').textContent = product.name;
-    document.getElementById('pdpNewPrice').textContent = `₹ ${product.price}`;
-    document.getElementById('pdpOldPrice').textContent = `₹ ${product.oldPrice}`;
+    document.getElementById('pdpNewPrice').textContent = `₹${product.price}`;
+    document.getElementById('pdpOldPrice').textContent = `₹${product.oldPrice}`;
     document.getElementById('pdpDiscount').textContent = product.discount;
-    document.getElementById('pdpEmi').textContent = `₹ ${product.emi}`;
-    document.getElementById('btnPrice').textContent = product.price;
+    
+    const emiEl = document.getElementById('pdpEmi');
+    if (emiEl) {
+        emiEl.textContent = product.emi ? `₹${product.emi}` : 'No EMI options';
+    }
+    
+    document.getElementById('btnPrice').textContent = `₹${product.price}`;
     
     const stockEl = document.getElementById('stockStatus');
     stockEl.textContent = product.stockStatus;
     if (product.stockStatus.toLowerCase().includes('out of stock')) {
-        stockEl.style.color = '#999';
+        stockEl.classList.add('stock-out-text');
     }
 
     // Breadcrumbs
@@ -116,6 +135,7 @@ function renderPDP(product) {
                             <span class="old-price">₹ ${p.oldPrice}</span>
                             <span class="new-price">₹ ${p.price}</span>
                         </div>
+                        <div class="product-taxes">Price inclusive of all taxes | Pan India Shipping</div>
                     </div>
                 </div>
             `;
@@ -172,7 +192,7 @@ function initGallery(product) {
 function initQuantityStepper(product) {
     const qtyInput = document.getElementById('qtyInput');
     const btnPrice = document.getElementById('btnPrice');
-    const basePrice = parseInt(product.price.replace(/,/g, ''));
+    const basePrice = parseInt(product.price.toString().replace(/[^0-9]/g, '')) || 0;
 
     document.getElementById('qtyPlus').addEventListener('click', () => {
         qtyInput.value = parseInt(qtyInput.value) + 1;
@@ -188,15 +208,35 @@ function initQuantityStepper(product) {
 
     function updatePrice() {
         const total = basePrice * parseInt(qtyInput.value);
-        btnPrice.textContent = total.toLocaleString('en-IN');
+        btnPrice.textContent = `₹${total.toLocaleString('en-IN')}`;
     }
 }
 
 function initAccordions() {
-    document.querySelectorAll('.acc-header').forEach(header => {
+    document.querySelectorAll('.acc-row').forEach(row => {
+        const header = row.querySelector('.acc-header');
         header.addEventListener('click', () => {
-            // Simple toggle for now
-            console.log("Toggle accordion");
+            const isOpen = row.classList.contains('open');
+            // Close others if needed, but here we just toggle
+            row.classList.toggle('open');
+            
+            // rotate icon is now handled via CSS .acc-row.open .acc-header svg
         });
     });
+}
+function initPDPActions(product) {
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+            SharedComponents.Cart.add({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image || product.mainImage
+            }, qty);
+        });
+    }
+
+    // Wishlist on PDP (if we add it later or use current heart icon if it exists)
 }
