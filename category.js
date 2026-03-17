@@ -370,7 +370,7 @@ function initCategoryPage() {
     // Update Sidebar Filters
     const sidebarContainer = document.querySelector('.sidebar-filters');
     if (sidebarContainer && data.filters) {
-        // Reuse fixed header but replace dynamic part
+        // Create Dynamic Filter HTML
         const filterGroupHtml = data.filters.map(filter => `
             <div class="filter-group">
                 <div class="filter-header">
@@ -378,11 +378,15 @@ function initCategoryPage() {
                     <button class="filter-toggle">−</button>
                 </div>
                 <div class="filter-options">
-                    ${filter.options.map(opt => `
-                        <label class="filter-checkbox">
-                            <input type="checkbox"> ${opt.label} (${opt.count.toString().padStart(2, '0')})
-                        </label>
-                    `).join('')}
+                    ${filter.options.map(opt => {
+                        // Dynamically calculate actual count
+                        const realCount = data.products.filter(p => p.type === opt.id).length;
+                        return `
+                            <label class="filter-checkbox">
+                                <input type="checkbox"> ${opt.label} (${realCount.toString().padStart(2, '0')})
+                            </label>
+                        `;
+                    }).join('')}
                 </div>
             </div>
         `).join('');
@@ -396,13 +400,29 @@ function initCategoryPage() {
         sidebarContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', () => applyFilters(data.products));
         });
+
+        // Attach listeners to filter toggles
+        sidebarContainer.querySelectorAll('.filter-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const group = header.closest('.filter-group');
+                const toggleBtn = header.querySelector('.filter-toggle');
+                
+                group.classList.toggle('collapsed');
+                
+                if (group.classList.contains('collapsed')) {
+                    toggleBtn.textContent = '+';
+                } else {
+                    toggleBtn.textContent = '−';
+                }
+            });
+        });
     }
 
     function applyFilters(products) {
-        const checkedTypes = Array.from(sidebarContainer.querySelectorAll('input[checked], input:checked')).map(cb => {
+        const checkedTypes = Array.from(sidebarContainer.querySelectorAll('input:checked')).map(cb => {
             // Find the opt id corresponding to this label
-            const label = cb.parentElement.textContent.trim().split(' (')[0];
-            const opt = data.filters[0].options.find(o => o.label === label);
+            const labelText = cb.parentElement.textContent.trim().split(' (')[0];
+            const opt = data.filters[0].options.find(o => o.label === labelText);
             return opt ? opt.id : null;
         }).filter(id => id);
 
@@ -415,8 +435,14 @@ function initCategoryPage() {
 
     function renderProductGrid(productsToRender) {
         const productGrid = document.getElementById('productGrid');
+        const resultsCountEl = document.getElementById('resultsCount');
         if (!productGrid) return;
         
+        // Update dynamic results count
+        if (resultsCountEl) {
+            resultsCountEl.textContent = `${productsToRender.length} Results`;
+        }
+
         productGrid.innerHTML = productsToRender.map(product => {
             const slug = product.name.toLowerCase().replace(/ /g, '-');
             return `
@@ -451,12 +477,7 @@ function initCategoryPage() {
         }).join('');
     }
 
-    // Update Product Grid
-    const productGrid = document.getElementById('productGrid');
-    const resultsCountEl = document.getElementById('resultsCount');
-    
-    if (resultsCountEl) resultsCountEl.textContent = `${data.resultsCount} Results`;
-    
+    // Initial Render
     if (productGrid) {
         renderProductGrid(data.products);
     }

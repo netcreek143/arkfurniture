@@ -704,7 +704,7 @@ a {
 
 @media (max-width: 768px) {
     .featured-collections {
-        padding: 40px 0 60px 20px; /* 20px left to show partial card peek */
+        padding: 40px 0 30px 20px; /* Reduced bottom padding */
     }
 
     .collections-container {
@@ -985,8 +985,8 @@ a {
     }
 
     .category-banner {
-        aspect-ratio: 4 / 5;   /* Tall portrait like reference */
-        border-radius: 10px;   /* Rounded corners as in image */
+        aspect-ratio: 1 / 1;   /* Reduced from 4 / 5 for compact view */
+        border-radius: 10px;
         overflow: hidden;
     }
 
@@ -1162,7 +1162,7 @@ a {
 
 @media (max-width: 768px) {
     .category-grid-section {
-        padding: 30px var(--padding-x) 20px; /* Reduced bottom padding from 80px to 20px */
+        padding: 30px var(--padding-x) 10px; /* Further reduced bottom padding */
     }
 
     .grid-heading {
@@ -1459,7 +1459,7 @@ a {
 
     .bedroom-banner {
         width: 100%;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 1 / 1; /* Reduced from 4 / 5 for compact view */
         border-radius: 12px;
         overflow: hidden;
         position: relative;
@@ -2988,8 +2988,8 @@ a {
 
     /* Hero Section Mobile — Match reference image exactly */
     .hero-section {
-        height: 100svh; /* Full viewport with safe area */
-        min-height: 600px;
+        height: 85svh; /* Reduced from 100svh */
+        min-height: 500px; /* Reduced from 600px */
     }
 
     /* Dark gradient overlay at bottom for text readability */

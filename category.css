@@ -105,6 +105,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: margin-bottom 0.3s ease;
 }
 
 .filter-name {
@@ -121,12 +124,36 @@
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
 }
 
 .filter-options {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow: hidden;
+    max-height: 500px;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.filter-group.collapsed .filter-options {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.filter-group.collapsed .filter-header {
+    margin-bottom: 0;
+}
+
+.filter-group.collapsed .filter-toggle {
+    transform: rotate(0deg); /* We'll change text content in JS, but keeping rotation for style */
 }
 
 .filter-checkbox {
