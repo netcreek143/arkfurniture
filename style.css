@@ -1491,28 +1491,26 @@ a {
     .bedroom-heading {
         font-size: 32px;
         line-height: 1.1;
-        margin-bottom: 12px;
+        margin-bottom: 8px; /* Tightened for mobile */
         font-family: var(--font-serif);
         color: #fff;
     }
 
-    .play-video-link {
-        color: var(--color-orange);
-        font-size: 14px;
+    .bedroom-support-text {
+        position: static !important; /* Reset desktop absolute positioning */
+        font-family: var(--font-sans);
+        font-size: 15px;
         font-weight: 500;
-        text-decoration: none;
-        margin-top: 10px;
+        color: var(--color-orange);
+        margin-top: 8px;
+    }
+
+    .bedroom-divider {
+        display: none; /* Hidden on mobile stack */
     }
 
     .play-button {
         display: none; /* Removed as per user request */
-    }
-
-    .play-icon {
-        width: 28px;
-        height: 28px;
-        fill: #fff;
-        margin-left: 4px;
     }
 
     .bedroom-subtitle {
