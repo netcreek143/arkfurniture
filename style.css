@@ -334,18 +334,16 @@ body {
     letter-spacing: -2px;
     margin-right: 48px;
     min-width: 380px;
-    margin-bottom: -15px;
-    /* Visual baseline alignment */
+    margin-bottom: 0;
+    /* Strict baseline alignment */
 }
 
 .hero-divider {
     width: 3px;
     height: 60px;
-    /* Reduced slightly to span second line */
     background-color: var(--color-orange);
     margin-right: 48px;
-    margin-bottom: 25px;
-    /* Lift from the flex-end bottom edge to align perfectly with 'Every Home' */
+    margin-bottom: 0;
 }
 
 .hero-text-and-button {
@@ -353,7 +351,7 @@ body {
     align-items: center;
     gap: 48px;
     height: 60px;
-    margin-bottom: 10px; /* Reduced from 25px to pull down */
+    margin-bottom: 0;
 }
 
 .hero-paragraph {
@@ -894,6 +892,7 @@ a {
     /* Thin vertical orange divider line */
     background-color: var(--color-orange);
     margin: 0 40px;
+    margin-bottom: 10px; /* Aligns visually with text baseline height */
 }
 
 .banner-subtitle {
@@ -904,6 +903,7 @@ a {
     white-space: nowrap;
     letter-spacing: 0.3px;
     margin-right: 40px;
+    margin-bottom: 15px; /* Aligns precisely with heading bottom line */
 }
 
 .banner-btn {
@@ -1291,7 +1291,6 @@ a {
 .bedroom-text-block {
     position: relative;
     z-index: 5;
-    /* Sit on top of play button shadow/edge */
     display: flex;
     flex-direction: column;
 }
@@ -1303,15 +1302,17 @@ a {
     font-weight: 400;
     color: var(--color-white);
     letter-spacing: -1px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 
 .bedroom-support-text {
+    position: absolute;
+    bottom: 25px;
+    left: 240px; /* Positioned below heading, outside flex flow */
     font-family: var(--font-sans);
     font-size: 16px;
     font-weight: 400;
     color: var(--color-orange);
-    /* Orange supporting line */
 }
 
 .bedroom-divider {
@@ -1319,6 +1320,7 @@ a {
     height: 60px;
     background-color: var(--color-orange);
     margin: 0 40px;
+    margin-bottom: 5px; /* Visual alignment with baseline */
 }
 
 .bedroom-subtitle {
@@ -1328,7 +1330,6 @@ a {
     line-height: 1.5;
     color: var(--color-white);
     margin-bottom: 10px;
-    /* Align nicely with the bottom area */
 }
 
 /* ==========================================================================
