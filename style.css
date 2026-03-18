@@ -212,6 +212,13 @@ body {
     background-color: #1a1a1a;
 }
 
+@media (max-width: 1500px) {
+    .hero-section {
+        min-height: 600px;
+        height: 80vh;
+    }
+}
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -309,7 +316,7 @@ body {
 /* BOTTOM CONTENT */
 .hero-bottom-content {
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     left: var(--padding-nav);
     right: var(--padding-nav);
     display: flex;
@@ -404,19 +411,44 @@ a {
 }
 
 /* RESPONSIVE ADAPTATIONS */
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
     .hero-heading {
-        font-size: 72px;
-        min-width: 320px;
-        margin-right: 32px;
+        font-size: 68px;
+        min-width: 300px;
+        margin-right: 24px;
+    }
+
+    .hero-divider, .hero-text-and-button {
+        gap: 24px;
     }
 
     .hero-divider {
-        margin-right: 32px;
+        margin-right: 24px;
     }
 
-    .hero-text-and-button {
-        gap: 32px;
+    .hero-bottom-content {
+        bottom: 40px;
+    }
+
+    /* Move indicator next to the button */
+    .hero-bottom-content {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 0; /* Gap will be handled by indicator margin */
+    }
+
+    .slide-indicator {
+        position: static;
+        margin-bottom: 25px; /* Alignment with button bottom */
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .hero-heading {
+        font-size: 60px;
+        min-width: 280px;
     }
 }
 
@@ -426,14 +458,15 @@ a {
     }
 
     .hero-heading {
-        font-size: 60px;
+        font-size: 54px;
         min-width: unset;
+        margin-right: 0;
     }
 
     .hero-text-block {
         flex-direction: column;
         align-items: flex-start;
-        gap: 32px;
+        gap: 20px;
     }
 
     .hero-divider {
@@ -444,11 +477,19 @@ a {
     .hero-text-and-button {
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px;
+        gap: 20px;
+        height: auto;
     }
 
     .hero-bottom-content {
-        align-items: flex-end;
+        align-items: flex-start;
+        bottom: 30px;
+    }
+
+    .slide-indicator {
+        position: static;
+        margin-top: 20px;
+        margin-bottom: 0;
     }
 }
 
