@@ -127,7 +127,7 @@ const SharedComponents = {
     `,
 
     uspSection: `
-        <section class="usp-section reveal">
+        <section class="usp-section">
             <div class="usp-grid-container">
                 <!-- Card 1 -->
                 <div class="usp-card">
@@ -447,6 +447,12 @@ const SharedComponents = {
     `,
 
     init() {
+        // Inject USP Section (High priority)
+        const uspPlaceholder = document.getElementById('shared-usp');
+        if (uspPlaceholder) {
+            uspPlaceholder.innerHTML = this.uspSection;
+        }
+
         // Inject Header
         const headerPlaceholder = document.getElementById('shared-header');
         if (headerPlaceholder) {
@@ -469,12 +475,6 @@ const SharedComponents = {
         const footerPlaceholder = document.getElementById('shared-footer');
         if (footerPlaceholder) {
             footerPlaceholder.innerHTML = this.footer;
-        }
-
-        // Inject USP Section
-        const uspPlaceholder = document.getElementById('shared-usp');
-        if (uspPlaceholder) {
-            uspPlaceholder.innerHTML = this.uspSection;
         }
 
         // Inject Login Modal
