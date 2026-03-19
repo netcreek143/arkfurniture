@@ -1292,7 +1292,7 @@ a {
     display: flex;
     align-items: flex-end;
     /* Push elements to the bottom baseline */
-    padding: 0 60px 70px 20px;
+    padding: 0 60px 70px 160px;
     width: 100%;
 }
 
@@ -1318,7 +1318,7 @@ a {
 .bedroom-support-text {
     position: absolute;
     bottom: 25px;
-    left: 240px; /* Positioned below heading, outside flex flow */
+    left: 160px; /* Positioned below heading, outside flex flow */
     font-family: var(--font-sans);
     font-size: 16px;
     font-weight: 400;
@@ -1436,8 +1436,6 @@ a {
 
     .bedroom-subtitle {
         width: 100%;
-        margin-left: 90px;
-        /* Align with text block above */
         margin-top: 15px;
     }
 
