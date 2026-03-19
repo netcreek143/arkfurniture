@@ -1373,8 +1373,7 @@ a {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    color: var(--color-black);
-    /* minimal black line icon */
+    object-fit: contain;
     transition: color 0.3s ease;
 }
 
