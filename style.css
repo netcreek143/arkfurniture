@@ -1284,9 +1284,6 @@ a {
     width: 100%;
     height: 100%;
     z-index: 2;
-    /* dark left/bottom overlay */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 30%, transparent 100%),
-        linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
 }
 
 .bedroom-content-wrapper {
@@ -1295,7 +1292,7 @@ a {
     display: flex;
     align-items: flex-end;
     /* Push elements to the bottom baseline */
-    padding: 0 60px 70px 0;
+    padding: 0 60px 70px 20px;
     width: 100%;
 }
 
@@ -1318,19 +1315,14 @@ a {
     margin-bottom: 0;
 }
 
-.bedroom-right-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
 .bedroom-support-text {
+    position: absolute;
+    bottom: 25px;
+    left: 240px; /* Positioned below heading, outside flex flow */
     font-family: var(--font-sans);
     font-size: 16px;
     font-weight: 400;
     color: var(--color-orange);
-    cursor: pointer;
 }
 
 .bedroom-divider {
