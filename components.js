@@ -126,6 +126,54 @@ const SharedComponents = {
         </section>
     `,
 
+    uspSection: `
+        <section class="usp-section reveal">
+            <div class="usp-grid-container">
+                <!-- Card 1 -->
+                <div class="usp-card">
+                    <img src="images/usp1.png" class="usp-icon" alt="10 Year Warranty">
+                    <span class="usp-text">10 Year Warranty</span>
+                </div>
+                <!-- Card 2 -->
+                <div class="usp-card">
+                    <img src="images/usp2.png" class="usp-icon" alt="Direct Selling">
+                    <span class="usp-text">Direct Selling :<br>Factory to Customer</span>
+                </div>
+                <!-- Card 3 -->
+                <div class="usp-card">
+                    <img src="images/usp3.png" class="usp-icon" alt="66 Quality Checks">
+                    <span class="usp-text">66 Quality Checks</span>
+                </div>
+                <!-- Card 4 -->
+                <div class="usp-card">
+                    <img src="images/usp4.png" class="usp-icon" alt="KD and HT Treated">
+                    <span class="usp-text">KD (Kiln Dried) and<br>HT (Heat Treated)</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="usp-card">
+                    <img src="images/usp5.png" class="usp-icon" alt="Ergonomically Designed">
+                    <span class="usp-text">Ergonomically<br>Designed</span>
+                </div>
+                <!-- Card 6 -->
+                <div class="usp-card">
+                    <img src="images/usp6.png" class="usp-icon" alt="Generations Long Durability">
+                    <span class="usp-text">Generations Long<br>Durability</span>
+                </div>
+                <!-- Card 7 -->
+                <div class="usp-card">
+                    <img src="images/usp7.png" class="usp-icon" alt="All India Service Warranty">
+                    <span class="usp-text">All India service<br>Warranty</span>
+                </div>
+                <!-- Card 8 -->
+                <div class="usp-card">
+                    <img src="images/usp8.png" class="usp-icon" alt="Free of Child Labour">
+                    <span class="usp-text">Free of Child Labour</span>
+                </div>
+            </div>
+        </section>
+    `,
+
     footer: `
         <footer class="site-footer">
             <div class="footer-container">
@@ -421,6 +469,12 @@ const SharedComponents = {
         const footerPlaceholder = document.getElementById('shared-footer');
         if (footerPlaceholder) {
             footerPlaceholder.innerHTML = this.footer;
+        }
+
+        // Inject USP Section
+        const uspPlaceholder = document.getElementById('shared-usp');
+        if (uspPlaceholder) {
+            uspPlaceholder.innerHTML = this.uspSection;
         }
 
         // Inject Login Modal
